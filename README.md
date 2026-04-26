@@ -76,3 +76,24 @@ cd rivonildo-quiz-praca-viva-oficial-main
 **Rivonildo Azevedo**  
 *Projeto de Extensão - Engenharia de Software*  
 *Universidade Anhanguera*
+
+## 🏗️ Arquitetura v2.0 (Modernização & DevSecOps)
+Este projeto foi refatorado para operar como um sistema distribuído (Microsserviços), adotando as melhores práticas do mercado em engenharia de software e segurança:
+
+### 🚀 Stack Tecnológica Atualizada
+*   **Frontend (Vercel):** Hospedado em infraestrutura Edge (pracaviva.vml10.xyz), garantindo carregamento ultrarrápido (CDN) para acesso via QR Code.
+*   **Backend (HostGator):** API REST em PHP 8+ com PDO seguro, servindo como ponte centralizada para banco de dados relacional.
+*   **Database:** MySQL Server hospedando arquitetura de rastreamento com 3 tabelas (plantas_metricas, cessos_log, ate_limit_log).
+
+### 🛡️ Segurança Aplicada (OWASP & LGPD)
+*   **WAF (Web Application Firewall):** Módulo PHP nativo bloqueando injeções (XSS, Code Injection) e ofuscadores (ase64).
+*   **Rate Limiting Anti-DDoS:** Sistema de contenção bloqueia automaticamente requisições após o limite de picos em menos de 1 minuto (status 429).
+*   **Conformidade LGPD:** Em vez de salvar endereços IP puros dos usuários, aplica algoritmos de hash em tempo real (SHA-256) garantindo privacidade total aos cidadãos.
+*   **Segurança no Banco (Blind SQLi):** Consultas rigidamente preparadas via PDO (Prepared Statements) e desligamento de emulações.
+
+### 📊 Sistema de Rastreamento (Analytics Global)
+*   **Captura de Geolocation:** Integração com APIs externas (ip-api.com) para obter Cidade, Fuso Horário e Estado do visitante.
+*   **Hardware/Software Fingerprinting:** Detecção nativa do Sistema Operacional (iOS, Android, Windows) e Navegador do usuário para métricas de engajamento comunitário.
+
+### ⚙️ CI/CD (Integração Contínua)
+*   Deploy automatizado construído via **GitHub Actions** (.github/workflows/devsecops.yml), prevendo etapas de verificação estática de código e entrega na Vercel a cada *commit* na branch principal.
