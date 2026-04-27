@@ -316,6 +316,15 @@
             .catch(err => console.error('Erro ao registrar Service Worker:', err));
         });
       }
+      
+      // Tracking da pagina principal Praça Viva
+      window.addEventListener("DOMContentLoaded", () => {
+          fetch("https://rivonildoazevedo1775507219000.1732015.meusitehostgator.com.br/backend/api.php", {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ acao: "registrar_visualizacao", planta_id: "home_pracaviva" })
+          }).catch(e => console.log("Erro tracking:", e));
+      });
     </script>
 </body>
 </html>
